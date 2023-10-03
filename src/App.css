@@ -1,42 +1,56 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background-color: #202020;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: end;
+  gap: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.bar {
+  height: 200px;
+  width: 75px;
+  border-radius: 5px 5px 0 0;
+  backface-visibility: hidden;
+  animation: bar-anim 2s infinite;
 }
 
-.card {
-  padding: 2em;
+.container :nth-child(2) {
+  animation-delay: .5s;
+  animation-duration: 1.5s;
 }
-
-.read-the-docs {
-  color: #888;
+.container :nth-child(3) {
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+}
+.container :nth-child(4) {
+  animation-delay: 2.5s;
+  animation-duration: 3s;
+}
+.container :nth-child(5) {
+  animation-delay: 2s;
+  animation-duration: 2.5s;
+}
+.container :nth-child(6) {
+  animation-delay: 1.5s;
+  animation-duration: 1s;
+}
+ 
+@keyframes bar-anim {
+  50% { height: 0; }
+  100% { height: 200px }
 }
